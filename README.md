@@ -1,6 +1,6 @@
 ## How to build it
 ```
-docker build -t gcr-retention:0.0.1 .
+docker build -t medineshkatwal/gcr-retention:v1.0.0 .
 ```
 
 ## How to run it
@@ -11,12 +11,9 @@ docker build -t gcr-retention:0.0.1 .
 ```
 Storage Object Admin
 ```
-
+:w
 ### run it
 
 ```
-docker run -it -e GCLOUD_SERVICE_KEY="$(cat serviceaccount.json| base64)"  \
-  -e DELETE_DATE_BEFORE=365 \
-  -e REPOSITORY='eu.gcr.io/my-project' \
-    gcr-retention:0.0.1
+sudo docker run -it -e GCLOUD_SERVICE_KEY="service_account_key"-e DELETE_DATE_BEFORE=2018-12-01 -e REPOSITORY='repository_xxxx' -e EXCLUDE='image1,image2,image3' medineshkatwal/gcr-retention:v1.0.0
 ```
