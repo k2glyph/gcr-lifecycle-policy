@@ -11,9 +11,13 @@ docker build -t medineshkatwal/gcr-retention:v1.0.0 .
 ```
 Storage Object Admin
 ```
-:w
+
 ### run it
 
 ```
-sudo docker run -it -e GCLOUD_SERVICE_KEY="service_account_key"-e DELETE_DATE_BEFORE=2018-12-01 -e REPOSITORY='repository_xxxx' -e EXCLUDE='image1,image2,image3' medineshkatwal/gcr-retention:v1.0.0
+sudo docker run -it -e GCLOUD_SERVICE_KEY="service_account_key" \
+    -e DELETE_DATE_BEFORE=2018-12-01 \ 
+    -e REPOSITORY='repository_xxxx' \ 
+    -e EXCLUDE='image1,image2,image3' \
+     medineshkatwal/gcr-retention:v1.0.0
 ```
