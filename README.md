@@ -1,6 +1,6 @@
 ## How to build it
 ```
-docker build -t medineshkatwal/gcr-retention:v1.0.0 .
+docker build -t medineshkatwal/gcr-retention:v1.0.3 .
 ```
 
 ## How to run it
@@ -18,6 +18,6 @@ Storage Object Admin
 sudo docker run -it -e GCLOUD_SERVICE_KEY="service_account_key" \
     -e DELETE_DATE_BEFORE=2018-12-01 \ 
     -e REPOSITORY='repository_xxxx' \ 
-    -e EXCLUDE='image1,image2,image3' \
-     medineshkatwal/gcr-retention:v1.0.0
+    -e INCLUDE='image1|image2|image3' \
+     medineshkatwal/gcr-retention:v1.0.3
 ```
